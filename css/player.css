@@ -1,0 +1,76 @@
+/* Container della barra (Fisso in basso) */
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0a0a0a; /* Sfondo solido */
+    border-top: 1px solid #1a1a1a;
+    padding: 12px 0;
+    z-index: 9999;
+    display: none; /* Appare via JS */
+}
+
+.player-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Info brano */
+.song-info { width: 180px; }
+#player-title { display: block; font-size: 0.9rem; font-weight: 600; color: #fff; }
+#player-artist { font-size: 0.75rem; color: #666; }
+
+/* Controlli */
+.player-controls {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-play {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    min-width: 30px;
+}
+
+/* LA PROGRESS BAR - Area cliccabile invisibile */
+.progress-container {
+    flex-grow: 1;
+    height: 30px; /* Area molto grande per il click */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+/* La linea grigia di sfondo */
+.progress-bg {
+    width: 100%;
+    height: 3px;
+    background: #333; /* Grigio visibile */
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden; /* Taglia la barra bianca */
+}
+
+/* La linea bianca che scorre */
+#progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%; /* Parte da zero */
+    background: #ffffff; /* Bianco puro */
+    border-radius: 2px;
+}
+
+.player-meta { font-size: 0.75rem; color: #666; font-family: monospace; }

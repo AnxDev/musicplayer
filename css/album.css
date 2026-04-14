@@ -1,0 +1,130 @@
+/* album.css */
+
+.album-page {
+    /* Non dichiariamo background o background-color qui */
+    font-family: -apple-system, system-ui, sans-serif;
+    margin: 0;
+    padding: 60px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header: Solo contenuto, zero fronzoli */
+.album-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.album-cover-large {
+    width: 180px; /* Dimensione discreta */
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    border-radius: 2px; /* Quasi squadrato */
+    overflow: hidden;
+}
+
+.album-cover-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-details h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.album-details p {
+    color: var(--text-dim); /* Usa la variabile del tuo styles.css */
+    font-size: 0.9rem;
+    margin-top: 4px;
+    opacity: 0.6;
+}
+
+/* Tracklist: Aria e linee impercettibili */
+.tracklist {
+    width: 100%;
+    max-width: 800px;
+}
+
+.tracklist-header {
+    display: grid;
+    grid-template-columns: 30px 1fr 60px;
+    padding: 10px 0;
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(255,255,255,0.05); /* Linea quasi invisibile */
+}
+
+.track-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 60px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: opacity 0.2s;
+}
+
+.track-row:hover {
+    opacity: 0.5; /* Feedback visivo sottile */
+}
+
+.track-number {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.track-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.track-duration {
+    text-align: right;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* Tasto Add Brano: Pulito */
+.owner-actions {
+    margin-top: 32px;
+}
+
+.btn-add-track {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.btn-add-track:hover {
+    opacity: 1;
+}
+
+.btn-add-track span {
+    font-size: 1.4rem;
+    font-weight: 200; /* Più sottile il simbolo + */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .album-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}

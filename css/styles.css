@@ -1,0 +1,187 @@
+body{
+
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: none;
+}
+input {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+input:focus {
+    border-color: var(--accent-color);
+    background-color: #2a2a2a;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Forza il browser a includere padding e bordi nel calcolo del 100% */
+}
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.projects-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    /* Crea colonne dinamiche: minimo 160px, massimo 1 frazione dello spazio */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--gap);
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    background-color: #282828;
+}
+
+.project-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Forza il formato quadrato */
+    margin-bottom: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.project-card:hover .play-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-info h3 {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Taglia il testo se troppo lungo */
+}
+
+.project-info p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+.fab-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    
+    /* FIX: Usa la stessa misura per entrambi */
+    width: 60px;
+    height: 60px;
+    
+    /* FIX: Forza il rapporto 1:1 nel caso intervengano altre regole */
+    aspect-ratio: 1 / 1; 
+    
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: #fff;
+    text-decoration: none;
+    
+    /* FIX: Rimuove eventuali padding che potrebbero renderlo ovale */
+    padding: 0; 
+    
+    /* FIX: Impedisce che il tasto si restringa se messo in contenitori flex */
+    flex-shrink: 0; 
+    
+    font-size: 32px;
+    line-height: 0; /* Centra meglio il simbolo verticalmente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Se il "+" sembra scentrato, a volte è colpa del font. 
+   Puoi regolare la posizione così: */
+.fab-button span {
+    margin-top: -4px; 
+}
+
+/* Effetto Hover (quando passi il mouse) */
+.fab-button:hover {
+    background-color: #828282; /* Leggermente più chiaro */
+    transform: scale(1.05); /* Si ingrandisce leggermente */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Effetto Active (quando clicchi) */
+.fab-button:active {
+    transform: scale(0.95); /* Si rimpicciolisce leggermente */
+}
+
+/* --- Media Query per Responsività (Mobile) --- */
+@media (max-width: 480px) {
+    .fab-button {
+        /* Rimpiccioliamo leggermente il tasto su schermi piccoli */
+        width: var(--fab-size-mobile);
+        height: var(--fab-size-mobile);
+        bottom: 16px;
+        right: 16px;
+        font-size: 24px;
+    }
+}
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Due colonne fisse su mobile piccolo */
+        gap: 12px;
+    }
+    .project-card {
+        padding: 12px;
+    }
+}
+.error {
+    color: #ff4d4d;
+    margin-top: 10px;
+    text-align: center;
+}
