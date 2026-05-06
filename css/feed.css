@@ -1,0 +1,162 @@
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 560px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.feed-item {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition);
+}
+
+.feed-item:hover {
+  transform: translateY(-2px);
+}
+
+.feed-cover {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.feed-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.feed-item:hover .feed-cover img {
+  transform: scale(1.03);
+}
+
+.feed-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  gap: 1rem;
+}
+
+.feed-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.feed-info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.15rem;
+}
+
+.feed-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.feed-info p a {
+  color: var(--accent);
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+  margin-left: auto; /* Spinge tutto a destra */
+}
+
+/* Stile base per entrambi i container dei tasti */
+.like-container,
+.comment-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.like-btn svg {
+  width: 20px;
+  height: 20px;
+  /* Se lo sfondo è nero, assicurati che il colore di base sia visibile */
+  fill: var(--text-muted, #666); 
+  transition: fill var(--transition), transform 0.15s ease;
+  display: block;
+}
+/* Tasti Azione (Like & Comment) */
+.like-btn,
+.comment-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform 0.2s ease;
+  text-decoration: none; /* Per il tag <a> del commento */
+}
+
+.like-btn:hover,
+.comment-btn:hover {
+  background: var(--accent-glow);
+}
+
+/* Icona Commento Minimal (Glow) */
+.comment-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none; /* Il commento di solito è solo contorno */
+  stroke: var(--text-muted, #666);
+  stroke-width: 2;
+  display: block;
+  transition: stroke var(--transition), filter var(--transition);
+}
+
+.comment-btn:hover svg {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+
+/* Animazione al click */
+.comment-btn:active {
+  transform: scale(0.9);
+}
+
+/* Conteggi */
+.like-count,
+.comment-count {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  min-width: 1ch;
+}
+.like-btn.liked svg {
+  fill: var(--accent); /* Il tuo viola */
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+/* Media Query specifica per icone leggermente più grandi su mobile se necessario */
+@media (max-width: 600px) {
+  .actions-container {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .feed-container {
+    margin: 1rem auto;
+    gap: 1rem;
+  }
+
+  .feed-cover {
+    aspect-ratio: 1 / 1;
+  }
+}

@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 1.5rem;
+}
+
+body > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, #f0f0f0 40%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body > h3 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--accent);
+}
+
+form input::placeholder {
+  color: #444;
+}
+
+form input[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+form + h3 {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+form + h3 a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+form + h3 a:hover {
+  color: #b06aff;
+}
+
+@media (max-width: 420px) {
+  body > h1 {
+    font-size: 1.6rem;
+  }
+
+  form {
+    padding: 1.75rem 1.25rem;
+  }
+}

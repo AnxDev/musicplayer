@@ -1,0 +1,133 @@
+.leaderboard-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.leaderboard-container h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.table-wrapper {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    background: rgba(138, 43, 226, 0.1);
+    padding: 1.2rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.leaderboard-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Stilizzazione Posizioni */
+.pos-cell span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.user-cell {
+    font-weight: 500;
+    color: var(--text);
+}
+
+.token-cell {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace; /* Look più tech/monetario */
+}
+/* Avatar nella classifica */
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 1px solid rgba(138, 43, 226, 0.3); /* Bordino viola sottile */
+}
+
+/* Link all'utente */
+.user-cell a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.user-cell a:hover {
+    color: var(--accent);
+}
+
+/* Allineamento celle */
+.user-cell {
+    display: flex;
+    align-items: center;
+}
+.token-icon {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Colori del Podio */
+.rank-gold .pos-cell span { 
+    background: linear-gradient(45deg, #ffd700, #ffae00); 
+    color: #000;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.rank-silver .pos-cell span { 
+    background: linear-gradient(45deg, #c0c0c0, #8e8e8e); 
+    color: #000;
+}
+
+.rank-bronze .pos-cell span { 
+    background: linear-gradient(45deg, #cd7f32, #a0522d); 
+    color: #000;
+}
+
+/* Animazione di entrata per le righe */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.leaderboard-table tr {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+@media (max-width: 500px) {
+    .leaderboard-container h1 { font-size: 1.5rem; }
+    .leaderboard-table td, .leaderboard-table th { padding: 0.8rem; }
+}

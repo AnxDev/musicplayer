@@ -1,0 +1,317 @@
+.container > h1 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.post-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.post-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.post-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-info {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.post-info > p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.post-info > p a {
+  color: var(--accent);
+}
+
+.post-info > p:nth-child(2) {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.post-info > form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1c1c1c;
+}
+
+.post-info > form textarea,
+.reply-form textarea {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  font-family: inherit;
+  line-height: 1.6;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.post-info > form textarea:focus,
+.reply-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.post-info > form textarea::placeholder,
+.reply-form textarea::placeholder {
+  color: #444;
+}
+
+.post-info > form button[type="submit"],
+.reply-form button[type="submit"] {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.post-info > form button[type="submit"]:hover,
+.reply-form button[type="submit"]:hover {
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+}
+
+.comments-container {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.comment-card {
+  padding: 1rem 0;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.comment-pfp,
+.reply-pfp {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+.comment-card > p,
+.reply-card > p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.comment-card > p a,
+.reply-card > p a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.comment-card > p:first-of-type {
+  font-size: 0.72rem;
+  color: #444;
+}
+
+.replies-container {
+  margin-left: 0 !important;
+  padding-left: 1rem;
+  border-left: 2px solid #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.reply-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  background: #0d0d0d;
+  border-radius: var(--radius-sm);
+}
+
+.reply-card > p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.reply-card > p:first-of-type {
+  font-size: 0.7rem;
+  color: #444;
+}
+
+.reply-card > p a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.comment-actions,
+.reply-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.reply-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  transition: color var(--transition);
+}
+
+.reply-btn:hover {
+  color: var(--accent);
+}
+
+.delete-btn {
+  font-size: 0.75rem;
+  color: #555;
+  transition: color var(--transition);
+}
+
+.delete-btn:hover {
+  color: #e05252;
+}
+
+.reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.9rem;
+  background: #0d0d0d;
+  border-radius: var(--radius-sm);
+  border: 1px solid #1e1e1e;
+}
+
+hr {
+  display: none;
+}
+.like-container,
+.comment-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.like-btn svg {
+  width: 20px;
+  height: 20px;
+  /* Se lo sfondo è nero, assicurati che il colore di base sia visibile */
+  fill: var(--text-muted, #666); 
+  transition: fill var(--transition), transform 0.15s ease;
+  display: block;
+}
+/* Tasti Azione (Like & Comment) */
+.like-btn,
+.comment-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform 0.2s ease;
+  text-decoration: none; /* Per il tag <a> del commento */
+}
+
+.like-btn:hover,
+.comment-btn:hover {
+  background: var(--accent-glow);
+}
+
+/* Icona Commento Minimal (Glow) */
+.comment-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none; /* Il commento di solito è solo contorno */
+  stroke: var(--text-muted, #666);
+  stroke-width: 2;
+  display: block;
+  transition: stroke var(--transition), filter var(--transition);
+}
+
+.comment-btn:hover svg {
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+
+/* Animazione al click */
+.comment-btn:active {
+  transform: scale(0.9);
+}
+
+/* Conteggi */
+.like-count,
+.comment-count {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  min-width: 1ch;
+}
+.like-btn.liked svg {
+  fill: var(--accent); /* Il tuo viola */
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+@media (max-width: 600px) {
+  .post-cover {
+    aspect-ratio: 4 / 3;
+  }
+
+  .post-info {
+    padding: 1.1rem 1rem;
+  }
+
+  .replies-container {
+    padding-left: 0.75rem;
+  }
+}

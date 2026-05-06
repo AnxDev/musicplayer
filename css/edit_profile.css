@@ -1,0 +1,125 @@
+.album-form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.album-form h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.input-group input[type="text"] {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.input-group input[type="text"]:focus {
+  border-color: var(--accent);
+}
+
+.input-group textarea {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.6;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.input-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.input-group textarea::placeholder,
+.input-group input::placeholder {
+  color: #444;
+}
+
+.input-group input[type="file"] {
+  background: #0d0d0d;
+  border: 1px dashed #2a2a2a;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.input-group input[type="file"]:hover {
+  border-color: var(--accent);
+}
+
+.input-group input[type="file"]::file-selector-button {
+  background: var(--accent-glow);
+  border: none;
+  border-radius: calc(var(--radius-sm) - 2px);
+  color: var(--accent);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 0.75rem;
+  transition: background var(--transition);
+}
+
+.input-group input[type="file"]::file-selector-button:hover {
+  background: rgba(138, 43, 226, 0.25);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .album-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions a,
+  .form-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -25,7 +25,7 @@
         $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
         if (mysqli_query($conn, $sql)) {
             echo "Registrazione avvenuta con successo!";
-            header("Location: ../index.php");
+            header("Location: login.php");
         } else {
             echo "Errore: " . $sql . "<br>" . mysqli_error($conn);
         }

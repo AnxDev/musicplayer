@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+  /* Padding minimo per non far toccare il form ai bordi del telefono */
+  padding: 10px; 
+}
+
+form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  /* Padding generoso su desktop, lo stringeremo su mobile */
+  padding: 3rem 2.5rem; 
+  width: 100%;
+  /* Aumentato a 450px per non farlo sembrare un "rettangolino" stretto */
+  max-width: 450px; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+form h1 {
+  font-size: 2rem; /* Titolo più grande */
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Input Grandi e leggibili */
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  width: 100%;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  /* Aumentato il padding interno agli input */
+  padding: 1.1rem; 
+  /* 16px è il minimo per non avere lo zoom fastidioso su mobile */
+  font-size: 16px; 
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: var(--accent);
+  background: #111;
+}
+
+/* Bottone massiccio */
+form input[type="submit"] {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s, background 0.3s;
+  margin-top: 0.5rem;
+}
+
+form input[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Link sotto il form */
+form + p {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+/* --- FIX AGGRESSIVO PER MOBILE --- */
+@media (max-width: 480px) {
+  body {
+    padding: 0; /* Eliminiamo padding dal body per guadagnare spazio */
+  }
+
+  form {
+    /* Riducendo il padding laterale del form, gli input diventano più larghi */
+    padding: 2.5rem 1.2rem; 
+    border-radius: 0; /* Opzionale: togli il raggio per farlo sembrare a tutta larghezza */
+    min-height: 100vh; /* Se vuoi che occupi tutto lo schermo in altezza */
+    justify-content: center;
+    max-width: none;
+  }
+
+  form h1 {
+    font-size: 1.7rem;
+  }
+
+  form input[type="email"],
+  form input[type="password"] {
+    padding: 1.2rem; /* Ancora più grandi da toccare */
+  }
+}

@@ -1,0 +1,109 @@
+.album-form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.album-form h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.input-group input[type="text"] {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.input-group input[type="text"]:focus {
+  border-color: var(--accent);
+}
+
+.input-group input[type="file"] {
+  display: none;
+}
+
+.cover-preview-wrapper {
+  cursor: pointer;
+  display: block;
+}
+
+#preview-container {
+  background: #0d0d0d;
+  border: 1px dashed #2a2a2a;
+  border-radius: var(--radius-md);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color var(--transition);
+  position: relative;
+}
+
+#preview-container:hover {
+  border-color: var(--accent);
+}
+
+#placeholder-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+#placeholder-text::before {
+  content: 'Clicca per caricare un\'immagine';
+}
+
+#image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .album-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions a,
+  .form-actions button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
